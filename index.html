@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P3-M26</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const step4Activity3 = document.querySelector('#activity-3 .step-4');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                  if (step4Activity3) step4Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'none';
+            } else {
+                 if (activity2) activity2.style.display = 'block';
+                   if (step4Activity3) step4Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P3-M26</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <!-- Aquí se insertarán las actividades -->
+         <!-- Actividad 0 -->
+        <div id="activity-0" class="activity" data-time="N/A">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                   <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Verificación inicial del equipo y materiales necesarios para completar la misión.
+                </div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr>
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                            Verificar que todos los dispositivos (tabletas o computadoras) estén encendidos, conectados a internet y que el editor de MakeCode esté abierto en modo "Crear". Confirmar que los Microbits estén disponibles y que el espacio esté organizado para trabajar cómodamente. Verificar que las baterías estén cargadas.
+                        </td>
+                        <td style="padding: 10px; vertical-align: top;">No se utiliza diálogo con los estudiantes en esta etapa.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity" data-time="2">
+            <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Bienvenida al grupo, agradecimiento y presentación de los objetivos del día.
+                </div>
+            </div>
+            <div id="activity_1_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                         <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                         <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                     </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 1): "¡Bienvenidos, Genios Desarrolladores!" y saludar a los estudiantes con entusiasmo, mencionando el tema del día.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Hola, Genios Desarrolladores! 🌟 ¡Qué emoción verlos listos para crear juegos increíbles con Micro:bit! Hoy vamos a transformar nuestras ideas en videojuegos divertidos y a explorar el fascinante mundo de la programación. ¡Prepárense para programar, crear y jugar!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar (Diapositiva 2): "¡Mi Nivel de Gameplay!" y pedir a los estudiantes que indiquen su estado de ánimo usando poses temáticas relacionadas con los videojuegos.</td>
+                         <td style="padding: 10px; vertical-align: top;">Antes de comenzar, ¡necesito saber cómo se sienten mis genios desarrolladores! 🎮 Si están listos para crear videojuegos con Micro:bit, ¡levanten los brazos como si estuvieran celebrando una victoria épica en su juego favorito! 🏆 Si necesitan un poquito más de energía, ¡crucen los brazos como si estuvieran concentrados en una partida intensa! 🕹️ ¡A ver esas poses llenas de energía gamer!</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0.5 minutos):</strong> Proyectar (Diapositiva 3): "¡Ritual de Gratitud Gamer!" y guiar a los estudiantes en el ritual.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Excelente, Genios! Ahora, ¡es momento de nuestro ritual Gnius! Juntemos nuestras manos y digamos juntos: '¡Gracias por estar aquí, Genios! Hoy vamos a crear juegos increíbles con Micro:bit y la programación. ¡A dar lo mejor de nosotros y a divertirnos creando y jugando!'</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0.5 minutos):</strong> Proyectar (Diapositiva 4): "¡Objetivos Gamer de Hoy!" y explicar los objetivos de la misión de manera clara y sencilla.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Y ahora, los objetivos de nuestra misión de hoy! 1. Vamos a practicar cómo crear juegos interactivos básicos con Micro:bit, utilizando los botones y la pantalla LED. 2. ¡Vamos a diseñar juegos divertidos que respondan a nuestras acciones y pongan a prueba nuestras habilidades y nuestra rapidez mental! ¿Listos para este reto gamer?</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 2 -->
+        <div id="activity-2" class="activity" data-time="4">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 4 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Juego para imitar movimientos de videojuegos y activar el cerebro.
+                </div>
+            </div>
+            <div id="activity_2_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 5): "¡Activando Nuestro Cerebro Gamer con El Espejo!" y explicar que jugarán a imitar movimientos de videojuegos para activar el cerebro.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Hola, Genios Desarrolladores! 🚀 Vamos a activar nuestros cerebros para crear juegos increíbles con Micro:bit. Hoy jugaremos a "El Juego del Espejo Gamer" para que nuestros cuerpos y mentes se preparen para la acción. ¿Listos para activar sus reflejos gamer?</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1,5 minutos):</strong> Proyectar (Diapositiva 6): "¡Reglas del Espejo Gamer!" y explicar las reglas del juego y dar ejemplos de movimientos para imitar acciones de videojuegos.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Ahora vamos a jugar a "El Juego del Espejo Gamer"! 🎮 Se colocarán en parejas y uno será el jugador y el otro el espejo. El jugador realizará movimientos de videojuegos, y el espejo lo imitará lo más rápido y preciso posible. ¡Prepárense para imitar acciones y reacciones de videojuegos!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1,5 minutos):</strong> Proyectar (Diapositiva 7): "¡Los Videojuegos en el Espejo!" y guiar a los estudiantes en el juego, alternando los roles de jugador y espejo y animándolos a participar.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Increíble, Genios! Ahora, a jugar a "El Juego del Espejo Gamer". ⏱️ Recuerden que deben imitar los movimientos de su compañero lo más rápido y preciso posible. ¡Prepárense para moverse, pensar y simular el mundo de los videojuegos! (El profesor guía el juego, alternando los roles de jugador y espejo). ¡Compartan sus simulaciones gamer y prepárense para practicar sus proyectos con lógica y videojuegos en MakeCode!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 3 -->
+        <div id="activity-3" class="activity" data-time="31">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 31 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Crear videojuegos usando MakeCode.
+                </div>
+            </div>
+            <div id="activity_3_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1,00 minuto):</strong> Proyectar (Diapositiva 8): "¡El Gran Desafío Gamer!" y presentar el desafío con la temática unificada, los nombres de los retos y los tres niveles (Rookie, Master, Hacker).</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios Desarrolladores, ha llegado el momento de crear videojuegos increíbles con Micro:bit! 🚀 Hoy vamos a hacer magia con la electrónica, la lógica y la programación de videojuegos. Tenemos tres desafíos emocionantes: '¡Reacción Rápida!' (Rookie), '¡Desafío de Velocidad!' (Master) y '¡Duelo en Pantalla!' (Hacker). ¡A elegir su reto gamer y a programar!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (2 minutos):</strong> Proyectar (Diapositiva 9): "¡Detalles de los Retos Gamer!" Describir los pasos y metas específicas de cada nivel, utilizando el texto original y resaltando en negrita las partes clave: Objetivo, Instrucciones, Condiciones y Consejo.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Aquí están los detalles de cada desafío para que elijan su camino!
+                            <br><br>
+                            <strong>Nivel Rookie (Básico): 'Reacción Rápida'</strong>
+                            <br>
+                            <strong>Nombre del Reto:</strong> '¡Pulsa a Tiempo!'
+                            <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Crear un juego de reacción simple donde el jugador debe presionar un botón cuando un patrón LED específico aparezca en la pantalla.
+                             <br>
+                             <span style="color: red; font-weight: bold;">Instrucciones:</span> Diseña un juego donde el Micro:bit muestre patrones aleatorios en la pantalla LED. El jugador debe presionar el botón A si aparece un patrón X (por ejemplo, una cruz) y el botón B si aparece un patrón O (un círculo). Si el jugador presiona el botón correcto dentro de un límite de tiempo (por ejemplo, 2 segundos), gana 1 punto. Muestra la puntuación final al terminar el juego.
+                            <br>
+                            <span style="color: red; font-weight: bold;">Condiciones:</span> El tiempo para reaccionar debe ser limitado. Solo las respuestas correctas dentro del tiempo asignado suman puntos.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Consejo:</span> Usa pause() para controlar el tiempo de espera entre patrones y verifica los botones con input.buttonIsPressed().
+                            <br><br>
+                            <strong>Nivel Master (Intermedio): 'Desafío de Velocidad'</strong>
+                            <br>
+                            <strong>Nombre del Reto:</strong> '¡Más Rápido, Más Preciso!'
+                             <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Diseñar un juego interactivo donde los patrones LED aparezcan más rápido conforme el jugador acumule puntos, aumentando la dificultad.
+                             <br>
+                             <span style="color: red; font-weight: bold;">Instrucciones:</span> Usa el juego del nivel Rookie como base. Programa el tiempo límite para reaccionar de modo que se reduzca gradualmente a medida que el jugador gana puntos. Añade una penalización: si el jugador presiona el botón incorrecto, pierde 1 punto. El juego debe finalizar después de 10 rondas o si el jugador alcanza 0 puntos.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Condiciones:</span> El límite de tiempo debe disminuir proporcionalmente con la puntuación del jugador. Al final del juego, muestra el puntaje final en la pantalla LED.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Consejo:</span> Usa una variable para el tiempo de espera y disminúyela dentro del bucle principal conforme la puntuación aumente.
+                            <br><br>
+                             <strong>Nivel Hacker (Avanzado): 'Duelo en Pantalla'</strong>
+                             <br>
+                            <strong>Nombre del Reto:</strong> '¡El Desafío de los Dos Jugadores!'
+                             <br>
+                             <span style="color: red; font-weight: bold;">Objetivo:</span> Crear un juego interactivo para dos jugadores utilizando los botones A y B como controles, con una mecánica competitiva para acumular puntos.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Instrucciones:</span> Diseña un juego donde el Micro:bit muestre una cuenta regresiva inicial (por ejemplo, 3-2-1). Muestra un patrón LED aleatorio en pantalla; el primer jugador en presionar su botón correctamente (A o B) gana 1 punto. Si un jugador presiona el botón incorrecto, el punto se le otorga al otro jugador. El juego debe tener 10 rondas y mostrar la puntuación final de ambos jugadores al final.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Condiciones:</span> Solo el primer jugador que presione correctamente su botón gana el punto de la ronda. La puntuación debe ser acumulativa y visible al final del juego.
+                             <br>
+                             <span style="color: red; font-weight: bold;">Consejo:</span> Usa un bucle para gestionar las rondas y condicionales para determinar qué jugador gana cada punto.</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (20 minutos):</strong> Proyectar (Diapositiva 10): "¡A Programar Videojuegos, Genios!" Temporizador de 20 minutos con recordatorio de los niveles y la temática.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Es su turno, genios desarrolladores! 🚀 Tienen 20 minutos para practicar cómo crear juegos interactivos con Micro:bit. Recuerden los nombres de sus retos y dejen que su creatividad guíe sus proyectos. ¡La magia de los videojuegos está en sus manos!</td>
+                    </tr>
+                     <tr class="step-4" >
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (5 minutos):</strong> Proyectar (Diapositiva 11): "¡Cargando la Magia Gamer!" Explicación de cómo conectar y transferir el código a Micro:bit, con instrucciones separadas para computadora y iPad.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Genios desarrolladores, llegó el momento de cargar su magia a Micro:bit! 💻 Si están en una computadora: Conecten su Micro:bit con el cable USB. Descarguen el archivo .hex generado por MakeCode. Arrastren el archivo .hex a su Micro:bit. 📱 Si están en un iPad: Conecten su Micro:bit por Bluetooth. Sigan las instrucciones de MakeCode para transferir el programa. ¡A cargar su magia y a ver sus videojuegos en acción!</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (3 minutos):</strong> Proyectar (Diapositiva 12): "¡Micro:bit y Videojuegos en Acción!" Temporizador de 3 minutos para transferir los programas.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Tienen 3 minutos para cargar sus programas a Micro:bit y ver cómo funcionan sus videojuegos! ⏱️ ¡A programar y a encender la diversión!</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (1 minuto):</strong> Proyectar (Diapositiva 13): "¡Misión Gamer Cumplida, Genios!" Revisar los objetivos específicos del desafío con los estudiantes, según cada nivel y reto.</td>
+                         <td style="padding: 10px; vertical-align: top;">"Hagamos un último chequeo: ¿Lograron crear juegos interactivos básicos con Micro:bit, utilizando los botones y la pantalla LED? ¿Diseñaron juegos divertidos que respondieran a nuestras acciones y pusieron a prueba nuestras habilidades y rapidez mental? ¡Estoy seguro de que superaron todas las expectativas! ¡Felicidades, genios desarrolladores!”</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity" data-time="5">
+            <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Reflexión en equipo sobre la experiencia de crear videojuegos.
+                </div>
+            </div>
+            <div id="activity_4_content" class="content">
+                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 14): "¡Team Gnius: Reflexión Colaborativa!" y guiar a los estudiantes a sus equipos.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios Desarrolladores, es momento de unir nuestras mentes y reflexionar sobre nuestra experiencia! 🤝 Reúnanse con sus compañeros de equipo y prepárense para compartir sus ideas.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar (Diapositiva 15): "Think: Reflexión Individual" y leer las preguntas en voz alta.</td>
+                        <td style="padding: 10px; vertical-align: top;">Primero, quiero que piensen individualmente en estas dos preguntas: 1.- ¿Qué fue lo que más disfrutaron de crear su propio videojuego en esta misión? 2.- ¿Qué habilidad de programación o diseño de videojuegos creen que han mejorado en esta misión? Tienen 30 segundos para reflexionar.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (2 minutos):</strong> Proyectar (Diapositiva 16): "Pair: Compartiendo en Parejas" e indicar a los estudiantes que compartan sus ideas con su compañero de equipo.</td>
+                         <td style="padding: 10px; vertical-align: top;">Ahora, compartan sus respuestas con su compañero de equipo. Tienen 5 minutos para discutir sus reflexiones y escuchar las ideas de su compañero.</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar (Diapositiva 17): "Share: Reflexión en Grupo" y pedir a los distintos equipos que compartan sus reflexiones con todo el grupo.</td>
+                         <td style="padding: 10px; vertical-align: top;">¿Qué equipo quiere compartir sus reflexiones sobre su experiencia en esta misión? Compartan con nosotros qué disfrutaron más de crear su videojuego y qué habilidades sienten que han mejorado en esta misión.</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (0.5 minutos):</strong> Proyectar (Diapositiva 18): "Objetivos de la Misión: Reflexión Final" y felicitar a los estudiantes.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Excelente trabajo, Genios! Han completado la misión de hoy y han reflexionado sobre su experiencia creando videojuegos. ¡Estoy seguro de que sus juegos y sus habilidades son cada vez mejores!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 5 -->
+        <div id="activity-5" class="activity" data-time="4">
+            <div class="banner" onclick="toggleContent('activity_5_content')">
+                <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Reflexión final y organización del espacio de trabajo.
+                </div>
+            </div>
+             <div id="activity_5_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 22): "¡Misión Gamer Cumplida, Desarrolladores!" Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron, enfocándose en la práctica de la creación de juegos interactivos con Micro:bit.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios Desarrolladores, llegó el momento de celebrar nuestros increíbles videojuegos! 🌟 Revisemos juntos nuestros objetivos: ¿Practicamos cómo crear juegos interactivos básicos con Micro:bit, utilizando los botones y la pantalla LED? ¿Diseñamos juegos divertidos que respondieran a nuestras acciones y pusieron a prueba nuestras habilidades y rapidez mental? ¡Estoy seguro de que cada uno creó algo genial! ¿Cómo se sienten al respecto?</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos, reforzando la creatividad, la lógica y la dedicación a la programación de videojuegos con Micro:bit.</td>
+                        <td style="padding: 10px; vertical-align: top;">Hoy, todos fueron increíbles desarrolladores de videojuegos. Dieron vida a juegos divertidos e interactivos con Micro:bit, exploraron el poder de la lógica y la programación, y demostraron su creatividad. ¡Estoy muy orgulloso de todos los genios desarrolladores que hay aquí! ¡Un aplauso para su creatividad, lógica y dedicación al mundo de los videojuegos!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (3 minutos):</strong> Proyectar (Diapositiva 23): "¡Honremos Nuestro Laboratorio de Juegos!" Dar instrucciones para recoger los materiales utilizados y organizar el espacio de trabajo.</td>
+                        <td style="padding: 10px; vertical-align: top;">Ahora, como verdaderos desarrolladores de videojuegos, debemos honrar nuestro espacio de trabajo. Recojan sus Micro:bits, tabletas y todos los materiales que usamos, y dejen el aula lista para nuevas aventuras de programación. ¡Recuerden que cuidar nuestro espacio es parte de la magia de la creación de videojuegos!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+   </div> <!-- Cierre del container -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
